@@ -9,7 +9,7 @@ const submitButton = document.querySelector('#subt');
 // Initialize game state variables
 let isGameActive = true;
 let previousGuesses = [];
-let attemptsRemaining = 15;
+let attemptsRemaining = 10;
 let randomNumber;
 
 // Start the game
@@ -40,17 +40,17 @@ function handleGuess(event) {
 
 // Function to generate a random number
 function generateRandomNumber() {
-  return Math.floor(Math.random() * 25 + 1);
+  return Math.floor(Math.random() * 10 + 1);
 }
 
 // Function to validate user input
 function validateInput(input) {
   if (isNaN(input)) {
     displayMessage(`Please Enter valid Number`, false);
-  } else if (input >= 0 && input <= 25) {
+  } else if (input > 0 && input <= 10) {
     checkGuess(input);
   } else {
-    displayMessage(`Please enter a valid number between 0 and 25.`, false);
+    displayMessage(`Please enter a valid number between 1 and 10.`, false);
   }
 }
 
