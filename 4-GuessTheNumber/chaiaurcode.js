@@ -62,7 +62,7 @@ function checkGuess(guess) {
   } else {
     previousGuesses.push(guess);
     displayMessage(
-      `Oops! Your guess  ${userInput.value}  ${randomNumber} was incorrect.`,
+      `Oops! Your guess  ${userInput.value} was incorrect. Try Again `,
       false
     );
     updateGameDisplay();
