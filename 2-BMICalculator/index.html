@@ -18,8 +18,10 @@
     <div class="container">
       <h1>BMI Calculator</h1>
       <form>
-        <p><label style="font-size:larger; margin-right: 50px;">Height in CM: </label><input type="text" id="height" /></p>
-        <p><label style="font-size:larger; margin-right: 50px; margin-top: 600px;" >Weight in KG: </label><input type="text" id="weight" /></p>
+        <p><label for="userName">Name<input type="text" id="userName" required  placeholder="First Name"></label></p>
+        <p><label  for="height">Height </label><input type="text" id="height" required placeholder="Height in CM"/></p>
+        <p><label for="weight">Weight</label><input type="text" id="weight" required placeholder="Weight in KG" /></p>
+
         <button type="submit">Calculate</button>
         <div id="results"></div>
         <div id="weight-guide">
