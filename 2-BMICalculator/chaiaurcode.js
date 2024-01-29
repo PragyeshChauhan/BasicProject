@@ -34,17 +34,17 @@ function updateScreen(bmi,You)
     messagePrinter(`${You} you are fit dear 😍  ${bmi}`,'darkgreen')
   }
 }
-function getRandomColor() {
-  var hexaLetter = '0123456789abcdefABCDEF';
-  var color ='#';
-  for (let index = 0; index <6; index++) {
-    color += hexaLetter[Math.floor(Math.random()*22)];  
-  }
-  return color;
-}
-setInterval(function () {
-  container.style.border = '25px solid '+getRandomColor();
-},500)
+// function getRandomColor() {
+//   var hexaLetter = '0123456789abcdefABCDEF';
+//   var color ='#';
+//   for (let index = 0; index <6; index++) {
+//     color += hexaLetter[Math.floor(Math.random()*22)];  
+//   }
+//   return color;
+// }
+// setInterval(function () {
+//   container.style.border = '25px solid '+getRandomColor();
+// },500)
 function messagePrinter(message ,backgroundColor){
   result.innerHTML = message;
   if(backgroundColor){
