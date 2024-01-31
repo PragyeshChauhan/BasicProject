@@ -5,18 +5,21 @@ let intervalRef;
 function getRandamColor() {
     let color ='#';
     let letterbox ='0123456789abcdefABCDEF';
-    for (let index = 0; index <=6; index++) {
+    for (let index = 0; index <6; index++) {
         color+= letterbox[ Math.floor(Math.random()*22)]; 
-    }
-    return color;  
+    } 
+    return  color;
 }
-startbutton.addEventListener('click' ,function(event){
+
+startbutton.addEventListener('click' ,function(){
     function intervalHandeler(str) {
         body.style.backgroundColor=getRandamColor();
         console.log(str);
     }
     intervalRef= setInterval(intervalHandeler,1000,"running")
 },false)
-stopbutton.addEventListener('click' ,function(event){
+
+
+stopbutton.addEventListener('click' ,function(){
     clearInterval(intervalRef);
 },false)
