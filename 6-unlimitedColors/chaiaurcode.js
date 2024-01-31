@@ -1,5 +1,5 @@
-let startbutton =document.querySelector('.start')
-let stopbutton =document.querySelector('.stop')
+let startbutton =document.querySelector('#start')
+let stopbutton =document.querySelector('#stop')
 let body =document.querySelector('body')
 let intervalRef;
 function getRandamColor() {
@@ -7,7 +7,8 @@ function getRandamColor() {
     let letterbox ='0123456789abcdefABCDEF';
     for (let index = 0; index <=6; index++) {
         color+= letterbox[ Math.floor(Math.random()*22)]; 
-    }  
+    }
+    return color;  
 }
 startbutton.addEventListener('click' ,function(event){
     function intervalHandeler(str) {
