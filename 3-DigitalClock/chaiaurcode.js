@@ -10,15 +10,16 @@ function generateRandomColor() {
   }
   return color;
 }
+var date = new Date();
+clock.innerHTML = date.toLocaleTimeString();
 //for time set interval 1sec to update screen every second
 setInterval(function () {
-  const date = new Date();
+  // const date = new Date();
   const localTime = date.toLocaleTimeString();
   clock.innerHTML = localTime;
   clock.style.background = generateRandomColor();
   // clock.style.color = 'black';
 }, 1000);
-const date = new Date();
 ClockDate.innerHTML = date.toDateString();
 setInterval(function () {
   ClockDate.style.backgroundColor = generateRandomColor();
