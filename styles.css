@@ -58,7 +58,9 @@
     
     h1 {
       font-weight: bold;
-      font-size: 1.5rem;
+      font-size: 1rem;
+      font-family: 
+      Cursive;
     }
     
     .projects {
@@ -77,6 +79,13 @@
     }
     #counter{
       margin-left: 85%;
+    }
+    #img{
+      width: 120px;
+      height: 120px;
+      margin-top: -150px;
+      margin-left: 40px;
+      border: 2px solid grey;
     }
     }
     @media only screen and (max-width :900px) {
@@ -124,7 +133,9 @@
       
       h1 {
         font-weight: bold;
-        font-size: 1.5rem;
+        font-size: 0.8rem;
+        font-family: 
+        Cursive;
       }
       
       .projects {
@@ -136,7 +147,7 @@
         background-color: rgb(255, 255, 255);;
         padding: 10px 30px;
         border-radius: 8px;
-        color: #212121;
+        color: #292727;
         /* text-decoration: none; */
         border: 2px solid #212121;
         margin-top: 5px;
@@ -144,7 +155,14 @@
         #counter{
           margin-left: 48%;
         }
+        #img{
+          width: 120px;
+          height: 120px;
+          margin-top: -150px;
+          border: 3px solid grey;
+        }
       }
+      
 
     
     
