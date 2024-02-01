@@ -1,7 +1,6 @@
 const clock = document.getElementById('clock');
 const ClockDate = document.getElementById('date');
 const body = document.querySelector('body');
-body.style.background = 'black';
 function generateRandomColor() {
   var hexaNumber = '0123456789abcdefABCDEF';
   var color = '#';
@@ -14,8 +13,8 @@ var date = new Date();
 clock.innerHTML = date.toLocaleTimeString();
 //for time set interval 1sec to update screen every second
 setInterval(function () {
-  // const date = new Date();
-  const localTime = date.toLocaleTimeString();
+  const date1 = new Date();
+  const localTime = date1.toLocaleTimeString();
   clock.innerHTML = localTime;
   clock.style.background = generateRandomColor();
   // clock.style.color = 'black';
