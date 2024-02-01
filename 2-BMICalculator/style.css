@@ -5,14 +5,14 @@
 }
 @media only screen and (min-width: 768px){
   .container {
-    min-width: 10px;
-    height: 754px;
-    max-width: 100%;
-    background-color: #c3cfcb;;
-    padding-left: 30px;
-    text-align: center;
-    font-size: large;
-    border: 4px solid #23aeee;;
+      min-width: 10px;
+      height: 754px;
+      max-width: 100%;
+      background-color: #cccbd9;
+      padding-left: 30px;
+      text-align: center;
+      font-size: large;
+      border: 14px solid #aaa;
   }
   #height,
   #weight,#userName {
