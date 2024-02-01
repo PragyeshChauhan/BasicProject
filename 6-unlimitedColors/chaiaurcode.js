@@ -12,14 +12,18 @@ function getRandamColor() {
 }
 
 startbutton.addEventListener('click' ,function(){
+    if(!intervalRef){
+        console.log("start again");
     function intervalHandeler(str) {
         body.style.backgroundColor=getRandamColor();
         console.log(str);
     }
     intervalRef= setInterval(intervalHandeler,1000,"running")
+    }
 },false)
 
 
 stopbutton.addEventListener('click' ,function(){
     clearInterval(intervalRef);
+    intervalRef=null;
 },false)
