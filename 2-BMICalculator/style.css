@@ -1,5 +1,8 @@
 
-
+#results ,#weight-guide{
+  font-family:Cursive ;
+  font: lighter;
+}
 @media only screen and (min-width: 768px){
   .container {
     min-width: 10px;
@@ -59,9 +62,9 @@
 @media only screen and (max-width:768px) {
   .container {
     min-width: 10px;
-    height: 10%;
+    height: 650px;
     max-width: 100%;
-    background-color: #c3cfcb;;
+    background-color: rgba(33, 162, 191, 0.396);;
     padding-left: 30px;
     text-align: center;
     font-size: large;
@@ -73,11 +76,11 @@
     width: 120px;
     height: 25px;
     margin-top: 50px;
-    border: 3px solid white;
+    border: 3px solid rgb(59, 69, 71);
     padding: 0px 10px;
     background-color:#fff;;
     margin-left:80px ;
-    color: black; 
+    color: #2885bbea; 
     border-radius: 1ex;
   }
   #weight-guide {
@@ -98,17 +101,19 @@
     margin-top: 34px;
     padding: 0px 15px;
     border-radius: 8px;
-    color: #c3cfcb;
+    color: #000000;
     text-decoration: none;
-    border: 2px solid #d6e0dc;
+    border: 3px solid #1b1e1d;
     font-size: 15px;
-    background-color: #2885bbea;
+    background-color: #f9f4f4;
   }
   
   h1 {
     padding-left: 15px;
     padding-top: 25px;
+    font-family: Monospace;
     
   }
+  
 
 }
