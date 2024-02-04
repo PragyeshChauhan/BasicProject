@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    * {
+        box-sizing: border-box;
+      }
+
+      @media only  screen and (max-width :768px) {
+        .userName{
+	    border-radius: 20px;
+        margin-top: 50%;
+        margin-left: 50%;
+        padding: 10px 5px;
+        margin-left:70px; 
+        text-align: center;
+
+      }
+      button{
+       border-radius: 10px;
+       padding: 10px 20px;
+       font-size: 10px;
+       font-weight: bold;
+       background-color: #5791ff;
+       border: none;
+       color: white;
+        margin-left: 100px;
+        margin-top: 80px;
+       }
+        .Block{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 50%;
+          height: 50%;
+          background-color: rgb(22, 22, 21);  
+          border: 3px solid  rgb(219, 194, 194);
+          border-radius: 15%;
+      }
+      }
+      @media only  screen and (min-width :900px) {
+        .userName{
+	    border-radius: 20px;
+        margin-top: 120px;
+        padding: 15px 5px;
+        margin-left: 40%; 
+        text-align: center;
+      }
+      .Block{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 50%;
+          height: 50%;
+          background-color: rgb(22, 22, 21);  
+          border: 2px solid  rgb(48, 45, 45);
+          border-radius: 25px;
+         }
+         button{
+       border-radius: 10px;
+       padding: 10px 20px;
+       font-size: 15px;
+       font-weight: bold;
+       background-color: #5791ff;
+       border: none;
+       color: white;
+       margin-left: 410px;
+       margin-top: 60px;
+      }
+      }
+   
+      body{
+          background-color: black;
+      }
+    </style>
+</head>
+<body>
+    <div class= "operation Block">
+       <input class ="name userName" type="text" placeholder="UserName">
+       <button><Datag>Get GitHub </Datag></button>
+    </div>
+
+    
+</body>
+<script>
+    const requesturl ='https://api.github.com/users/pragyeshchauhan';
+    const body = document.querySelector('body');
+    const httpsObject=  new XMLHttpRequest();
+    httpsObject.open('GET',requesturl);
+    // to track the request state 
+    httpsObject.onreadystatechange = function () {
+        console.log(httpsObject.readyState);
+        if(httpsObject.readyState ===4 ){
+            let response =JSON.parse(this.responseText);
+            // body.innerHTML= response.; // this is use to inform that we are talking about in context 
+        }
+    }
+    httpsObject.send();
+
+</script>
+</html>

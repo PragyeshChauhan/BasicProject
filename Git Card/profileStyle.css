@@ -1,0 +1,262 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap"); */
+
+body {
+    background-color: #545454;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Center content vertically */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 450px;
+    border: none;
+    border-radius: 15px;
+    padding: 8px;
+    background-color: #fff;
+    position: relative;
+    height: 400px;
+    box-shadow: 8px 8px 20px #2a282c;
+}
+
+.upper img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.profile img {
+    height: 90px;
+    width: 91px;
+    margin-top: 0px;
+    border-radius: 73px;
+}
+
+.profile {
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 45px); /* Adjusted left position */
+    height: 90px;
+    width: 90px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+}
+
+.follow {
+    margin-left: 40%;
+    border-radius: 10px;
+    padding: 5px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #252930ef;
+    box-shadow: 6px 6px 15px rgb(51, 27, 27);
+    border: none;
+    color: white;
+    
+}
+.follow:hover{
+    background-color: #5791ff;
+    box-shadow: 6px 6px 15px white;
+}
+
+.stats span {
+    font-size: 13px; 
+    padding-left: 80px; 
+}
+.stats .label {
+    font-size: 15px;    
+    margin-bottom: 5px;   
+    padding-left: 60px;  
+}
+.stats{
+    justify-content: center;
+    align-items: center;
+    display: inline-block;
+}
+.name {
+    text-align: center;
+}
+.Address{
+    margin-left: 4px;
+    background-color: rgb(245, 241, 241);
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: rgb(119, 100, 100);
+    box-shadow: 6px 6px 15px rgb(51, 27, 27);
+    text-align: center;
+}
+
+#PopUp{
+    background-color: rgba(0, 0, 0, 0.329);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top :0;
+    display: none;
+    justify-content: center ;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.pop-content{
+    height: 200px;
+    width: 500px;
+    padding: 30px;
+    padding-top: 50px;
+    margin-top: 3%;
+    background-color: white;
+    position: relative;
+    border-radius: 20px;
+}
+
+.pop-content input{
+    margin: 20px auto;
+    display: block;
+    width: 35%;
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 10px;
+    
+}
+
+.pop-content img{
+    height: 20px;
+    width: 20px;
+    background-color: rgb(236, 228, 228);
+    border-radius: 50%;
+    
+}
+#cross{
+    position: absolute;
+    top: -5px;
+    right: -5px
+}
+
+#cross:hover{
+   background-color: red;
+}
+
+#user{
+    height: 50px;
+    width: 50px;
+    
+}
+#user:hover{
+background-color: yellow;
+height: 65px;
+width: 65px;
+}
+
+.Search{
+position: absolute;
+right: 230px;
+top: 200px;
+}
+.login:hover{
+    background-color: #5791ff;
+    box-shadow: 6px 6px 15px white;
+}
+.mainDetail{
+    margin-top: 60px;
+    height: 120px;
+    padding: 10px;
+    width: 420px;
+    border-radius: 20px;
+    margin-left: 5px;
+    box-shadow: 6px 6px 20px rgba(44, 42, 42, 0.918);
+    background-color: rgba(246, 248, 248, 0.918);
+    filter: blur(2px);
+}
+
+.mainDetail:hover{
+    background-color: #5791ff;;
+    filter: blur(0px);
+}
+
+@media  only screen and (max-width:768px) {
+    .Address {
+        margin-left: -1px;
+        box-shadow: 6px 6px 15px rgb(51, 27, 27);
+
+    }
+    .card {
+        
+             width: 270px;
+            height: 350px;
+       
+    }
+    .follow {
+        margin-left: 30%;
+    }
+    
+    .follow:hover{
+        background-color: #5791ff;
+        box-shadow: 6px 6px 15px white;
+    }    
+.stats span {
+    font-size: 13px; 
+    padding-left: 45px; 
+
+}
+.stats .label {
+    font-size: 15px;    
+    margin-bottom: 20px;   
+    padding-left: 30px;  
+}
+.mainDetail{
+    width: 322px;
+    border-radius: 20px;
+    margin-left: -38px;
+}
+#company{
+    padding-left: 31px; 
+}
+.pop-content{
+    height: 200px;
+    width: 300px;
+    /* padding: 30px; */
+    padding-top: 50px;
+    margin-top: 3%;
+    background-color: white;
+    position: relative;
+    border-radius: 20px;
+    margin-left: 15px;
+}
+.Search{
+    position: absolute;
+    right: 70px;
+    top: 200px;
+    }
+
+    #PopUp{
+        background-color: rgba(0, 0, 0, 0.329);
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top :0;
+        display: none;
+        justify-content: center ;
+        align-items: center;
+        text-align: center; 
+        
+    }
+
+    .pop-content input{
+        width: 150px;
+      text-align: center;
+     
+        
+    }
+   
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="GitCardstyle.css">
+    <style>
+ 
+
+    </style>
+    <script>
+         const  popMessage = document.querySelector('.popMessage');
+	    function closePopUp(){
+                       window.location.reload();
+                    } 
+
+          function signUP() {
+                  window.location.href = `https://github.com/join`;
+                 }
+	</script>
+</head>
+<body>
+    <div class="container">
+        <form id="Git UserForm">
+            <h1>Create Your Git Card 🎴</h1>
+            <input id ="userName"type="text" placeholder="pragyeshchauhan" required>
+            <button type="button" class="button">Create</button>
+        </form>
+    </div>
+
+    <div class="popMessage">
+       <div class="popcontent">
+       <img src="./image/cross-23.png" alt="" onclick="closePopUp()">
+       <h1>You Dont have Account</h1>
+       <h3>DO you want to SignUp  ?</h3>
+       <button class="no" onclick="closePopUp()">❌</button>
+       <button class="yes" onclick="signUP()">✅</button>
+       </div>
+       
+    </div>
+</body>
+<script>
+    document.querySelector('.button').addEventListener('click', function event(e){
+        e.preventDefault();
+        let userName = document.querySelector('#userName').value;
+        console.log(userName);
+        const requesturl = `https://api.github.com/users/${userName}`;
+        getResponse(requesturl, function(response) {
+            console.log(response);
+            if(response){
+                const follower_url =`https://api.github.com/users/${userName}/followers`;
+                const repos_url =`https://api.github.com/users/${userName}/repos`;
+                const avatar_url =response.avatar_url;
+
+                // getResponse(follower_url, function(followers) {
+                    getResponse(repos_url, function(repos) {
+                        // followers = followers ? followers.length : 0;
+                        repos = repos ? repos.length : 0;
+                        const data ={
+                            "Name"  : response.name,
+                            "address" : response.location,
+                            "avatar_url":response.avatar_url,
+                            "repos": repos,
+                            "company" : response.company,
+                            "followers" :  response.followers
+                        }
+                        window.location.href = `profile.html?data=${JSON.stringify(data)}`;
+                    });
+                // });
+            } else {
+                alert(`${userName} Not Exist on Git`)
+            }
+        });
+    }, false);
+
+    function getResponse(url, callback) {
+        try {
+            const httpsObject = new XMLHttpRequest();
+        httpsObject.open('GET', url);
+        httpsObject.onreadystatechange = function () {
+            if(httpsObject.readyState === 4 && httpsObject.status === 200) {
+                const response = JSON.parse(httpsObject.responseText);
+                callback(response);
+            }else   if(httpsObject.readyState === 4 && httpsObject.status==404){
+                OpenPopUp() 
+           }else   if(httpsObject.status==400){
+                     alert("Git server is slow ")
+           };
+        }
+        httpsObject.send(); 
+       
+        } catch (error) {
+            alert("server is low try again or after some time ")
+
+        }
+        const  popMessage = document.querySelector('.popMessage');
+                  function OpenPopUp(){
+                   popMessage.style.display ='flex'
+                    }
+        //   function closePopUp(){
+        //                 popMessage.style.display ='none'
+        //             } 
+
+        //   function signUP() {
+        //           window.location.href = `https://github.com/join`;
+        //          }
+    }
+</script>
+
+</html>

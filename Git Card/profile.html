@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile Card</title>
+    <link rel="stylesheet" href="profileStyle.css"> <!-- Link to external CSS file -->
+
+    <script>
+        // 
+
+    function OpenPopUp(){
+    const popUp = document.getElementById('PopUp');
+    popUp.style.display ='flex'
+    }
+    function closePopUp(){
+    const popUp = document.getElementById('PopUp');   
+    popUp.style.display ='none'
+    }
+
+function openSearchedUser() {
+    const searchedUser = document.querySelector('#SearchUser').value; 
+    // window.open(MyPath,"","toolbar=no,status=no,menubar=no,location=center,scrollbars=no,resizable=no,height=500,width=657");
+    // window.open(`https://github.com/${searchedUser}`,"result","toolbar=no,status=no,menubar=no,location=center,scrollbars=no,resizable=no,width=+screen.availWidth+,height=+screen.availHeight"); 
+   if(searchedUser){
+    window.location.href = `https://github.com/${searchedUser}`;
+   }else{
+      alert('Not found ')
+   }
+}
+function editGitHub() {
+    window.location.href = `https://github.com/login`;
+}
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <div class="upper">
+            <img src="https://i.imgur.com/Qtrsrk5.jpg" class="img-fluid" alt="Cover Photo">
+        </div>
+        <div class="user text-center">
+            <div class="profile">
+                <img src="https://i.imgur.com/JgYD2nQ.jpg" class="rounded-circle" width="80" alt="Profile Photo">
+            </div>
+        </div>
+        <div class="userDetail">
+            <h4 class="name">Pragyesh</h4>
+            <button class="follow" onclick="OpenPopUp()">+Follow</button>
+            <h5 class="Address">Hardoi India</h5>
+            
+            <div class="mainDetail">
+                <div class="stats">
+                    <h6 class="label">Followers</h6>
+                    <span class="followersvalue">8,797</span>
+                </div>
+                <div class="stats">
+                    <h6 class="label">Projects</h6>
+                    <span class ="ProjectsValue" >142</span>
+                </div>
+                <div class="stats">
+                    <h6 class="label" id ="company">Company</h6>
+                    <span class ="CompanyValue"> bursys</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+     <div id="PopUp">
+
+    <div class="pop-content">
+        <img id="cross" src="./image/cross-23.png" alt="cross" onclick="closePopUp()">
+        <img id = "user" src="./image/userName.png" alt="User">
+        <input id="SearchUser" type="text" placeholder="Search User" required >
+        <button class ="follow Search"type="button" onclick="openSearchedUser()">Search</button>
+        
+     </div>
+    
+  </div>
+</div>
+
+</body>
+
+<script>
+     const urlParams = new URLSearchParams(window.location.search);
+     const dataString = urlParams.get('data');
+    // Parse the data string into JSON
+    const data = JSON.parse(dataString);
+    if(data){
+   const name1 = document.querySelector('.name');
+   const Address = document.querySelector('.Address');
+   const followersvalue = document.querySelector('.followersvalue');
+   const ProjectsValue = document.querySelector('.ProjectsValue');
+   const CompanyValue = document.querySelector('.CompanyValue');
+   //setting image
+   console.log(data.avatar_url);
+//    const img = document.querySelector('.rounded-circle').src ='data.avatar_url';
+  if(data.avatar_url){
+   const img = document.querySelector('.profile').innerHTML = `  <img src=${data.avatar_url} class="rounded-circle" width="80" alt="Profile Photo">`;
+  }
+  //setting value 
+   setInnerHtml(name1 ,data.Name ? data.Name: "Name" )
+   setInnerHtml(followersvalue ,data.repos)
+   setInnerHtml(ProjectsValue ,data.followers)
+   setInnerHtml(CompanyValue , data.company ? data.company : "Empty" )
+   if(data.address){
+    setInnerHtml(Address ,data.address+" 🏠") 
+   }else{
+       replaceSpan()
+   }
+   
+   function setInnerHtml(tag ,value) {
+    tag.innerHTML=value;
+   }
+   function replaceSpan() {
+//    const userDetail = document.querySelector('.userDetail');
+   const span = document.createElement('h5')
+   span.className ="login Address"
+   span.setAttribute("onclick","editGitHub()")
+   span.innerHTML ="Add Address 🏠"
+   Address.replaceWith(span);
+    
+   }
+}
+
+</script>
+
+</html>
